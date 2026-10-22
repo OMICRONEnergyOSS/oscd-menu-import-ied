@@ -1,0 +1,56 @@
+{
+  "name": "@omicronenergy/oscd-menu-import-ied",
+  "version": "0.0.0",
+  "description": "OpenSCD menu plugin for importing an IED from an SCL file.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OMICRONEnergyOSS/oscd-menu-import-ied.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OMICRONEnergyOSS/oscd-menu-import-ied/issues"
+  },
+  "homepage": "https://github.com/OMICRONEnergyOSS/oscd-menu-import-ied",
+  "keywords": ["OpenSCD", "iec61850"],
+  "contributors": ["OMICRON Electronics GmbH"],
+  "exports": {
+    ".": "./dist/oscd-menu-import-ied.js",
+    "./oscd-menu-import-ied.js": "./dist/oscd-menu-import-ied.js"
+  },
+  "files": [
+    "/dist/",
+    "!/dist/demo/",
+    "!/dist/**/*.spec.*",
+    "!/dist/**/*.test.*"
+  ],
+  "scripts": {
+    "lint": "oscd lint",
+    "format": "oscd lint --format",
+    "build": "oscd build",
+    "bundle": "oscd bundle",
+    "test": "oscd test",
+    "test:watch": "oscd test --watch",
+    "start": "oscd start",
+    "start:bundle": "oscd start-bundle",
+    "deploy": "oscd deploy",
+    "prepare": "oscd install-hooks"
+  },
+  "dependencies": {
+    "@lit/localize": "^0.12.2",
+    "@omicronenergy/oscd-menu-open": "^0.0.6",
+    "@omicronenergy/oscd-menu-save": "^0.0.2",
+    "@omicronenergy/oscd-shell": "^0.0.13",
+    "@omicronenergy/oscd-ui": "^0.0.12",
+    "@open-wc/scoped-elements": "^3.0.6",
+    "@openscd/oscd-api": "^0.1.6",
+    "@openscd/scl-lib": "^2.0.0",
+    "lit": "^3.3.2",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@omicronenergy/oscd-tooling": "^0.0.8",
+    "@open-wc/testing": "^4.0.0",
+    "@webcomponents/scoped-custom-element-registry": "^0.0.10"
+  }
+}

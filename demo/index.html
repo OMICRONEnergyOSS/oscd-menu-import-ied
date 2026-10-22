@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Import IED demo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@300;400;500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined&display=block" />
+    <style>
+      * {
+        --oscd-theme-text-font: 'Roboto';
+        --oscd-theme-icon-font: 'Material Symbols Outlined';
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <oscd-shell></oscd-shell>
+    <script type="module">
+      import '@webcomponents/scoped-custom-element-registry';
+      import '@omicronenergy/oscd-shell/oscd-shell.js';
+      import { plugins } from './plugins.js';
+
+      const shell = document.querySelector('oscd-shell');
+      shell.plugins = plugins;
+      const response = await fetch('sample.scd');
+      if (!response.ok) {
+        throw new Error(`Could not load sample project: ${response.status}`);
+      }
+      shell.docs = {
+        'sample.scd': new DOMParser().parseFromString(
+          await response.text(),
+          'application/xml',
+        ),
+      };
+      shell.docName = 'sample.scd';
+    </script>
+  </body>
+</html>
