@@ -102,9 +102,11 @@ export default class OscdMenuImportIed extends ScopedElementsMixin(LitElement) {
     <oscd-dialog .type=${'alert'} aria-label=${msg('IED import failed')}>
       <div slot="headline">${msg('IED import failed')}</div>
       <p slot="content">${this.errorMessage}</p>
-      <oscd-text-button slot="actions" @click=${this.handleCloseError}>
-        ${msg('Close')}
-      </oscd-text-button>
+      <div slot="actions">
+        <oscd-text-button @click=${this.handleCloseError}>
+          ${msg('Close')}
+        </oscd-text-button>
+      </div>
     </oscd-dialog>`;
   }
 

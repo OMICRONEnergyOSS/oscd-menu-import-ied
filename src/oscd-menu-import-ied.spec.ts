@@ -215,6 +215,13 @@ describe('oscd-menu-import-ied', () => {
     selectFiles(file);
     await expectError('already exists');
     const close = dialog.querySelector('oscd-text-button')!;
+    await dialog.updateComplete;
+    const actions = dialog.querySelector('[slot="actions"]')!;
+    const buttonBounds = close.getBoundingClientRect();
+    const actionsBounds = actions.getBoundingClientRect();
+    expect(buttonBounds.width).to.be.greaterThan(0);
+    expect(buttonBounds.width).to.be.lessThan(actionsBounds.width / 2);
+    expect(actionsBounds.right - buttonBounds.right).to.be.closeTo(24, 1);
     close.dispatchEvent(new MouseEvent('click', { bubbles: true, composed: true }));
     await waitUntil(() => !dialog.open);
 
