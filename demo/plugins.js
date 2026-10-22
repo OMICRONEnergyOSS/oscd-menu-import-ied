@@ -1,5 +1,9 @@
-import OscdMenuOpen from '@omicronenergy/oscd-menu-open';
-import OscdMenuSave from '@omicronenergy/oscd-menu-save';
+  import {
+  OscdMenuOpen,
+  OscdMenuSave,
+} from '@omicronenergy/oscd-menu-commons';
+
+  import OscdEditorSource from '@omicronenergy/oscd-editor-source';
 
 import OscdMenuImportIed from '../dist/oscd-menu-import-ied.js';
 
@@ -10,6 +14,8 @@ if (!shell?.registry) {
 
 shell.registry.define('oscd-menu-open', OscdMenuOpen);
 shell.registry.define('oscd-menu-save', OscdMenuSave);
+    shell.registry.define('oscd-editor-source', OscdEditorSource);
+
 shell.registry.define('oscd-menu-import-ied', OscdMenuImportIed);
 
 export const plugins = {
@@ -37,7 +43,7 @@ export const plugins = {
       name: 'Source Editor',
       icon: 'data_object',
       requireDoc: true,
-      src: 'https://omicronenergyoss.github.io/oscd-editor-source/oscd-editor-source.js',
+      tagName: 'oscd-editor-source',
     },
   ],
   background: [],
