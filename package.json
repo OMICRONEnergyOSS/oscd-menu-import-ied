@@ -1,6 +1,6 @@
 {
   "name": "@omicronenergy/oscd-menu-import-ied",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "OpenSCD menu plugin for importing an IED from an SCL file.",
   "type": "module",
   "license": "Apache-2.0",
