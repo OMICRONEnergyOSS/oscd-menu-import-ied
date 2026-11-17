@@ -85,8 +85,7 @@ implemented here.
 - Namespace/prefix assumptions and repeated dependency traversal are inherited
   from the shared helper. Large or unusual documents need independent review.
 
-All investigation findings and accepted/deferred behavior differences are
-recorded in `worklog.md`. Behavioral tests do not certify schema conformance.
+Behavioral tests do not certify schema conformance.
 
 ## Recovery provenance
 
